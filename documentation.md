@@ -16,7 +16,7 @@ The approach is to train a random forest binary classifier and calculate the FAR
 
 ## Dataset
 
-The CICIDS2018 dataset is used which is a labeled dataset, specifically the subset which was created in 02-21-2018 and having Ddos attacks. A pickle file of the aforementioned processed subset is available in the repo
+The CICIDS2018 dataset is used which is a labeled dataset, specifically the subset which was created in 02-21-2018 and having Ddos attacks. A pickle file of the aforementioned processed subset is available in the repo. Link to dataset: https://www.kaggle.com/datasets/solarmainframe/ids-intrusion-csv?resource=download&select=02-16-2018.csv
 
 ## Methodology
 
