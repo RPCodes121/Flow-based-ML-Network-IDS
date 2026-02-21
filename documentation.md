@@ -8,11 +8,11 @@ FAR- False alarm rate
 
 ## Context
 
-Network intrusion detection is a practice where attacks meant to break or gain unauthorized access inside a network are detected. A popular method by which IDSs are created is by using Machine Learning. This project aims to focus on analyzing the high False alarm rate which is a common issue in ML-based IDS.
+Network intrusion detection is a practice where attacks meant to break or gain unauthorized access inside a network are detected. A popular method by which IDSs are created is by using Machine Learning.
 
 ## Approach
 
-The approach is to train a random forest binary classifier and calculate the FAR using the formula FP/(FP+TN).
+The approach is to train a random forest binary classifier and calculate metrics such as accuracy and False alarm ratio.
 
 ## Dataset
 
