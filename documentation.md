@@ -6,13 +6,17 @@ ML- Machine Learning
 IDS- Intrusion Detection System
 FAR- False alarm rate
 
+## note
+
+Certain contextual features (e.g., service ports) were removed after feature importance analysis revealed they caused unrealistically perfect classification.
+
 ## Context
 
 Network intrusion detection is a practice where attacks meant to break or gain unauthorized access inside a network are detected. A popular method by which IDSs are created is by using Machine Learning.
 
 ## Approach
 
-The approach is to train a random forest binary classifier and calculate metrics such as accuracy and False alarm ratio.
+This repository implements a flow-based machine learning intrusion detection baseline and investigates dataset artifacts that can produce misleadingly perfect performance.
 
 ## Dataset
 
@@ -20,4 +24,8 @@ The CICIDS2018 dataset is used which is a labeled dataset, specifically the subs
 
 ## Methodology
 
-First the dataset is loaded and the necessary cleaning is done (removing infinite and missing values). Benign class is labeled as 0 and the Ddos attack class is labeled 1. Initial Class imbalance study shows a higher attack to benign ratio i.e more amount of attacks than benign which is not the case in real-world network traffic. Hence by dividing the dataset into separate subsets for each class and reversing the imbalance , we acheive higher benign:attack ratio (Balancing methods like SMOTE are not used because network traffic is highly imbalanced by default). After this the top 15 features with the highest variances are captured and redundant features such as Dst Port (service context feature) and Timestamp are dropped. Then the dataset is divided among two variables X and Y , where X has only labels and Y has only labels. Then the dataset is splitted into Training and testing set.
+First the dataset is loaded and the necessary cleaning is done (removing infinite and missing values). Benign class is labeled as 0 and the Ddos attack class is labeled 1. Initial Class imbalance study shows a higher attack to benign ratio i.e more amount of attacks than benign which is not the case in real-world network traffic. Hence by dividing the dataset into separate subsets for each class and reversing the imbalance , we acheive higher benign:attack ratio (Balancing methods like SMOTE are not used because network traffic is highly imbalanced by default). After this the top 15 features with the highest variances are captured and redundant features such as Dst Port (service context feature) and Timestamp are dropped. Then the dataset is divided among two variables X and Y , where X has only labels and Y has only labels. Then the dataset is splitted into Training and testing set and then comparative analysis between two classification models , Logistic Regression and Random Forest is done.
+
+## key insights
+
+Initial Confusion matrix showed 0 False positives which resulted in FAR to be 0. C
